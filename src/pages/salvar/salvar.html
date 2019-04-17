@@ -1,0 +1,19 @@
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="dados.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Preço</ion-label>
+      <ion-input type="text" [(ngModel)]="dados.preco"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label fixed>Descrição</ion-label>
+      <ion-input type="text" [(ngModel)]="dados.descricao"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="salvar(dados)">Salvar Dados</button>
+  </ion-list>

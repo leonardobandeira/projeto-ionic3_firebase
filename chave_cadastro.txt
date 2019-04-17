@@ -1,0 +1,13 @@
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDVF9irtKpEs-m83_hzzp2vBCjB3v2RD0w",
+    authDomain: "mycurso-c1586.firebaseapp.com",
+    databaseURL: "https://mycurso-c1586.firebaseio.com",
+    projectId: "mycurso-c1586",
+    storageBucket: "mycurso-c1586.appspot.com",
+    messagingSenderId: "410575002461"
+  };
+  firebase.initializeApp(config);
+</script>
