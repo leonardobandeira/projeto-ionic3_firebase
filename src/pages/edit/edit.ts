@@ -19,7 +19,9 @@ export class EditPage {
   key;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private bd: FirebaseServiceProvider) {
-    this.dados = this.navParams.get('dados');
+    this.dados.nome = this.navParams.get('nome');
+    this.dados.preco = this.navParams.get('preco');
+    this.dados.descricao = this.navParams.get('descricao');
     this.key = this.navParams.get('key');
   }
 

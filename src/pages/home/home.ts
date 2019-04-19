@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseServiceProvider } from '../../providers/firebase-service/firebase-service';
 import { SalvarPage } from '../salvar/salvar';
+import { EditPage } from "../edit/edit";
 
 @Component({
   selector: 'page-home',
@@ -28,7 +29,8 @@ export class HomePage {
     this.navCtrl.setRoot(SalvarPage);
   }
 
-  goToSingle(key) {
-    console.log(key);
+  goToSingle(key: any, nome: any, descricao:any, preco: any) {
+    console.log(descricao);
+    this.navCtrl.setRoot(EditPage, {'key': key, 'nome': nome, 'descricao': descricao, 'preco': preco});
   }
 }

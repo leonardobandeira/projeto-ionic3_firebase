@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
 import { SalvarPage } from '../pages/salvar/salvar';
+import { EditPage } from "../pages/edit/edit";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SalvarPage } from '../pages/salvar/salvar';
     AboutPage,
     HomePage,
     TabsPage,
-    SalvarPage
+    SalvarPage,
+    EditPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { SalvarPage } from '../pages/salvar/salvar';
     AboutPage,
     HomePage,
     TabsPage,
-    SalvarPage
+    SalvarPage,
+    EditPage
   ],
   providers: [
     StatusBar,
