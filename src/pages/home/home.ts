@@ -8,11 +8,20 @@ import { SalvarPage } from '../salvar/salvar';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  private dados;
+  private busca;
+  private dados = [];
+  private d;
+  private k;
 
   constructor(public navCtrl: NavController, public db: FirebaseServiceProvider) {
-    this.dados = this.db.listarTudo();
-    console.log(this.db.listarTudo());
+    this.busca = this.db.listarTudo();
+    this.busca.subscribe(chave => {
+      chave.forEach(element => {
+        this.d = element.payload.val();
+        this.k = {'key': element.key, 'nome': this.d.nome, 'descricao': this.d.descricao, 'preco': this.d.preco};
+        this.dados.push(this.k);
+      });
+    });
   }
 
   add() {
@@ -20,6 +29,6 @@ export class HomePage {
   }
 
   goToSingle(key) {
-    //console.log(key);
+    console.log(key);
   }
 }

@@ -13,6 +13,14 @@ export class FirebaseServiceProvider {
   }
 
   listarTudo() {
-    return this.bancoDeDados.list('dados').valueChanges();
+    return this.bancoDeDados.list('dados').snapshotChanges();
+  }
+
+  update(key:any, dados:any) {
+    return this.bancoDeDados.list('dados').update(key, dados);
+  }
+
+  apagar(key:any) {
+    return this.bancoDeDados.list('dados').remove(key);
   }
 }

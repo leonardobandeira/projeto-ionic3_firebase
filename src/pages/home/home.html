@@ -8,8 +8,8 @@
   <h2>Welcome to Ionic!</h2>
   
   <ion-list>
-    <button ion-item *ngFor="let d of dados|async" (click)="goToSingle(d.key)">
-      {{d.nome}} - {{d.preco}}
+    <button ion-item *ngFor="let d of dados" (click)="goToSingle(d.key, d.nome, d.descricao, d.preco)">
+      {{d.key}} - {{d.nome}} 
     </button>
   </ion-list>
   <button ion-button secondary full (click)="add()">Adicionar Item</button>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>edit</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="dados.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Preço</ion-label>
+      <ion-input type="text" [(ngModel)]="dados.preco"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label fixed>Descricao</ion-label>
+      <ion-input type="text" [(ngModel)]="dados.descricao"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="update(key, dados)">Atualizar</button>
+
+    <button ion-button full color="danger" (click)="remove(key)">Remover</button>
+
+  </ion-list>
+</ion-content>
