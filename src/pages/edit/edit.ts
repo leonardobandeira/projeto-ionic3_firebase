@@ -25,17 +25,18 @@ export class EditPage {
     this.key = this.navParams.get('key');
   }
 
-  update(course) {
+  update(key: any, dados: any) {
     this.bd.update(this.key, this.dados).then(d => {
       this.navCtrl.setRoot(HomePage);
     });
   }
 
-  remove(course) {
+  remove(key: any) {
     this.bd.apagar(this.key).then(d => {
       this.navCtrl.setRoot(HomePage);
     });
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditPage');

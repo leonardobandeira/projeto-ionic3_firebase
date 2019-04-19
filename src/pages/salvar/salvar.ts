@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { FirebaseServiceProvider } from '../../providers/firebase-service/firebase-service';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -8,7 +9,7 @@ import { FirebaseServiceProvider } from '../../providers/firebase-service/fireba
   templateUrl: 'salvar.html',
 })
 export class SalvarPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams, public bd: FirebaseServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public bd: FirebaseServiceProvider,public toastCtrl: ToastController) {
   }
 
   dados = {
@@ -19,5 +20,15 @@ export class SalvarPage {
 
   salvar(dados) {
     this.bd.salvarDados(dados);
+    this.presentToast();
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  presentToast() {
+    const toast = this.toastCtrl.create({
+      message: 'Dados salvos!',
+      duration: 3000
+    });
+    toast.present();
   }
 }
